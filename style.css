@@ -1,0 +1,514 @@
+@font-face {
+  font-family: 'suse-regular';
+  src: url(./font-suse/SUSE-Regular.ttf);
+}
+@font-face {
+  font-family: 'suze-bold';
+  src: url(./font-suse/SUSE-Bold.ttf);
+}
+/* General setting */
+*
+{
+  margin:0; 
+  padding: 0; 
+  font-family: 'suse-regular'; 
+  box-sizing: border-box;
+}
+body
+{
+  background-color: #000000;
+   color: #ffffff; 
+}
+/* Header Section */
+.header
+{
+  width:100%; 
+  height: 100vh;
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(net-images/header-image.png);
+  background-size: cover; 
+  background-position: center; 
+  padding: 10px 8%; 
+  position: relative;
+}
+nav
+{
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  padding: 10px 0;
+}
+.logo
+{
+  width: 150px; 
+  cursor: pointer;
+}
+nav button
+{
+   border: 0; 
+   outline: 0; 
+   background: #db0001; 
+   color: #ffffff; 
+   padding: 7px 20px; 
+   font-size: 12px; 
+   border-radius: 3px; 
+   margin-left: 10px; 
+   cursor: pointer;
+}
+.language-button
+{
+  display:inline-flex; 
+  align-items: center; 
+  background: transparent; 
+  border: 1px solid #ffffff; 
+  padding: 7px 10px 7px 0px;
+}
+.language-button img
+{
+  width: 10px; 
+  margin-left: 10px; 
+}
+.translate
+{
+  margin-right: 10px; margin-left: 0px;
+}
+.header-content
+{
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  text-align: center;  
+}
+.header-content h1
+{
+  font-size: 60px; 
+  line-height: 70px; 
+  font-weight: 600; 
+  max-width: 650px;
+  padding-bottom: 20px;
+}
+.header-content h3
+{
+  font-weight: 400; 
+  margin-bottom: 20px; 
+}
+.email-data 
+{
+  display: flex; 
+  align-items: center; 
+  background: #ffffff48; 
+  border-radius: 4px; 
+  margin-top: 30px; 
+  overflow: hidden;
+}
+.email-data input
+{
+  flex: 1; 
+  border: 0; 
+  outline: 0; 
+  margin-left: 20px;
+  background-color: #ffffff00;
+  color: #ffffff;
+}
+.email-data input::placeholder 
+{
+  color: #ffffffb9;
+}
+.email-data button
+{
+  background: #db0001; 
+  border: 0; 
+  outline: 0; 
+  color: #ffffff; 
+  font-size: 20px; 
+  cursor: pointer; 
+  padding: 15px 13px 15px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.email-data button svg 
+{
+  fill: #ffffff;
+  width: 27px;
+  height: 27px;
+}
+.horizontal-line
+{
+  border-top-left-radius: 50% ;
+  border-top-right-radius: 50% ;
+  background-color: #777777;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+/* Features Section */
+.features
+{
+  padding: 50px 12%; 
+  font-size: 22px; 
+}
+.features h2
+{
+  font-size: 50px; 
+  font-weight: 600; 
+  margin-bottom: 20px;
+}
+.row
+{
+  display: flex; 
+  width: 100%; 
+  align-items: center; 
+  flex-wrap: wrap; 
+  padding: 50px 0;
+}
+.text-column
+{
+  flex-basis: 50%; 
+  margin-bottom: 20px;
+}
+.image-column
+{
+  flex-basis: 50%; 
+  margin-bottom: 20px;
+}
+.image-column img
+{
+  display: block; 
+  width: 90%; 
+  margin: auto;
+}
+/* FAQ Section */
+.faq
+{
+  padding: 10px 12%; 
+  text-align: center; 
+  font-size: 18px;
+}
+.faq h2
+{
+  font-size: 40px; 
+  font-weight: 700; 
+}
+.accordion
+{
+  margin: 60px auto; 
+  width:100%; 
+  max-width: 750px;
+}
+.accordion li
+{
+  list-style: none; 
+  width: 100%; 
+  padding: 5px;
+}
+.accordion li label /* accodrdion-label */
+{
+  display: flex; 
+  align-items: center; 
+  padding: 20px; 
+  font-size: 18px; 
+  font-weight: 500; 
+  background-color: #303030; 
+  margin-bottom: 2px; 
+  cursor: pointer; 
+  position: relative;
+}
+.accordion-label::after
+{
+  content:'+'; 
+  font-size: 34px; 
+  position: absolute; 
+  right: 20px; 
+  transition: transform 0.5s;
+}
+input[type="checkbox"]
+{
+  display: none;
+}
+.accordion .faqcontent
+{
+  background: #303030; 
+  text-align: left; 
+  line-height: 25px;
+  padding: 0 20px; 
+  max-height: 0; 
+  overflow: hidden; 
+  transition: max-height 0.5s, padding 0.5s;
+}
+.accordion input[type="checkbox"]:checked + .accordion-label + .faqcontent
+{
+max-height: 600px; 
+padding: 30px 20px;
+} 
+.accordion input[type="checkbox"]:checked + label::after /* accodrdion-label */
+{
+  transform: rotate(45deg);
+}
+/* Email Form in FAQ*/
+.faq .email-data
+{
+  max-width: 600px; 
+  margin: 20px auto; 
+  text-align: center;
+}
+.faq small
+{
+  font-size: 13px;
+}
+/* Footer Section*/
+.footer
+{
+  padding: 50px 15% 10px; 
+  border-top: 6px solid #333333; 
+  color:#777777; 
+  margin-top: 40px;
+}
+.footer h2
+{
+  font-size: 18px; 
+  font-weight: 400px; 
+  margin-bottom: 30px;
+}
+.footer .col
+{
+  flex-basis: 21%; 
+  flex-grow: 1; 
+  margin: 20px;
+}
+.footer .col a
+{
+  display: block; 
+  text-decoration: none; 
+  color: #777777; 
+  font-size: 15px; 
+  margin-bottom: 10px;
+}
+.footer .row
+{
+  align-items: flex-start; 
+  padding: 10px 0;
+}
+.footer .language-button
+{
+  color: #ffffff; 
+  padding: 10px 20px; 
+  border-radius: 3px; 
+  margin-bottom: 20px;
+}
+.footer .translate
+{
+  margin-right: 10px; margin-left: 0px;
+}
+#copyright-text
+{
+  font-size: 14px; margin-bottom: 20px;
+}
+/* media queries for phone screens */
+@media only screen and (max-width: 600px)
+{
+  /* Header section adjustments for phones */
+  .header
+  {
+    height: 90vh;
+  }
+  .logo
+  {
+    width: 100px;
+  }
+  nav button
+  {
+    padding: 7px 10px;
+  }
+  nav .language-button
+  {
+    padding: 8px 8px 8px 0px; 
+    font-size: 0px;
+  }
+  .translate
+  {
+  margin-right: 0px; margin-left: 0px;
+  }
+  .header-content
+  {
+    position: relative;
+    top: 45%;
+    width: 85%;
+  }
+  .header-content h1
+  {
+    font-size: 30px;
+  }
+  .email-data button
+  {
+    font-size: 12px;
+    padding: 7px 5px 7px 10px;
+  }
+  .email-data button svg
+  {
+    width: 18px;
+  }
+  /* Features section adjustments for phones */
+  .features
+  {
+    padding: 50px 12%; 
+    font-size: 15px; 
+    text-align: left;
+  }
+  .features h2
+  {
+    font-size: 30px;
+  }
+  .text-column, .image-column
+  {
+    flex-basis: 100%;
+  }
+  .row:nth-child(2), .row:nth-child(4)
+  {
+    flex-direction: column-reverse;
+  }
+  .row
+  {
+    padding: 10px 0;
+  }
+  /* FAQ section adjustments for phones */
+  .faq
+  {
+    padding: 10px 5%;
+    font-size: 16px;
+  }
+  .faq h2
+  {
+    font-size: 25px;
+    padding-left: 12px;
+    text-align: left;
+  }
+  .accordion li label /* accodrdion-label */
+  {
+    font-size: 16px;
+  }
+  .accordion .faqcontent
+  {
+    line-height: 25px;
+  }
+  .accodrdion-label::after
+  {
+    font-size: 30px;
+  }
+  .faqcontent p
+  {
+    padding-left: 10px;
+  }
+  /* Footer section adjustments for phones */
+  .footer h2
+  {
+    font-size: 17px;
+  }
+  .footer .col
+  {
+    flex-basis: 21%; 
+    flex-grow: 1; 
+    margin: 0px;
+  }
+  .footer .col a
+  {
+    margin-bottom: 15px;
+  }
+}
+/* media queries for tablet screens */
+@media only screen and (min-width: 600px) and (max-width: 1030px)
+{
+  /* Header section adjustments for tabs */
+  .header
+  {
+    height: 90vh;
+  }
+  .logo
+  {
+    width: 150px;
+  }
+  nav button
+  {
+    padding: 7px 10px;
+  }
+  nav .language-button
+  {
+    padding: 8px 8px 8px 0px;
+  }
+  .translate
+  {
+    margin-right: 10px; margin-left: 0px;
+  }
+  .header-content h1
+  {
+    font-size: 50px;
+  }
+  .email-data button
+  {
+    font-size: 17px;
+    padding: 10px 11px 10px 17px;
+  }
+  .email-data button svg
+  {
+    width: 20px;
+  }
+  /* Features section adjustments for tabs */
+  .features
+  {
+    padding: 50px 12%; 
+    font-size: 15px; 
+    text-align: center;
+  }
+  .features h2
+  {
+    font-size: 30px;
+  }
+  .text-column, .image-column
+  {
+    flex-basis: 100%;
+
+  }
+  .row:nth-child(2), .row:nth-child(4)
+  {
+    flex-direction: column-reverse;
+  }
+  .row
+  {
+    padding: 10px 0;
+  }
+  /* FAQ section adjustments for tabs */
+  .faq
+  {
+    padding: 10px 5%;
+    font-size: 16px;
+  }
+  .faq h2
+  {
+    font-size: 25px;
+    padding-left: 12px;
+    text-align: left;
+  }
+  .faqcontent p
+  {
+    padding-left: 10px;
+  }
+  /* Footer section adjustments for tabs */
+  .footer h2
+  {
+    font-size: 17px;
+  }
+  .footer .col
+  {
+    flex-basis: 21%; 
+    flex-grow: 1; 
+    margin: 0px;
+  }
+  .footer .col a
+  {
+    margin-bottom: 15px;
+  }
+  .footer .row
+  {
+    align-items: flex-start; 
+    padding: 10px 0;
+  }
+}
